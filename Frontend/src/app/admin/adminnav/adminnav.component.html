@@ -1,0 +1,87 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Welcome Admin
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" routerLink="admindashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <div class="dropdown">
+      <button
+        mat-button
+        class="menu-button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <mat-icon>add</mat-icon>
+        <span>Add</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="addlibrarian">Librarian</a>
+        <a class="dropdown-item" routerLink="addlibrarymember"
+          >Library Member</a
+        >
+      </div>
+    </div>
+    <div class="dropdown">
+      <button
+        mat-button
+        class="menu-button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <mat-icon>visibility</mat-icon>
+        <span>View</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="viewlibrarian">Librarian</a>
+        <a class="dropdown-item" routerLink="viewlibrarymember"
+          >Library Member</a
+        >
+      </div>
+    </div>
+    <div class="dropdown">
+      <button
+        mat-button
+        class="menu-button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="deletelibrarian">Librarian</a>
+          <a class="dropdown-item" routerLink="deletelibrarymember"
+            >Library Member</a
+          >
+        </div>
+      </button>
+    </div>
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>LogOut</span>
+    </button>
+  </mat-sidenav>
+  <!-- Main content here! -->
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

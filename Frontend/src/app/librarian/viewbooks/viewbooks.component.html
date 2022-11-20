@@ -1,0 +1,45 @@
+<div class="card">
+    <div class="card-header">
+      {{ pageTitle }}
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table" *ngIf="books && books.length">
+        <thead>
+          <tr>
+            <th>Book Image</th>
+            <th>Book ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>About</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>
+              <img
+                [src]="book.imageUrl"
+                [title]="book.title"
+                [style.width.px]="imageWidth"
+                [style.margin.px]="imageMargin"
+              />
+            </td>
+            <td>{{ book.bookId }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author}}</td>
+            <td>{{book.category}}</td>
+            <td>{{ book.about }}</td>
+            <td>
+               <button class="btn btn-warning" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="editBook(book)" style="margin-left: 20px;"> Edit</button>
+              <button
+                class="btn btn-danger" *ngIf="_auth.loggedIn()" (click)="deleteBook(book)"
+                style="cursor: pointer">Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

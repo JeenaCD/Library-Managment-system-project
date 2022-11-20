@@ -1,0 +1,74 @@
+<div class="card">
+  <form (ngSubmit)="AddBook()">
+    <div class="card-header">New Book</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><label>Book ID</label></td>
+              <td>
+                <input type="text" name="b_id" [(ngModel)]="bookItem.bookId" />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Title</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="b_title"
+                  [(ngModel)]="bookItem.title"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Author</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="b_author"
+                  [(ngModel)]="bookItem.author"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Image Url</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="b_url"
+                  [(ngModel)]="bookItem.imageUrl"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Category</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="b_category"
+                  [(ngModel)]="bookItem.category"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>About</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="b_about"
+                  [(ngModel)]="bookItem.about"
+                />
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Submit" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>

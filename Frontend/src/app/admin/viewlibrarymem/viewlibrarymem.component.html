@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+</div>
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table" *ngIf="libraryMembers && libraryMembers.length">
+      <thead>
+        <tr>
+          <th>Library Member Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let librarymember of libraryMembers">
+          <td>{{ librarymember.librarymemberId }}</td>
+          <td>{{ librarymember.name }}</td>
+          <td>{{ librarymember.username }}</td>
+          <td>{{ librarymember.password }}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="login-main">
+  <div class="login-card">
+    <form #adminForm="ngForm" (ngSubmit)="validateAdmin()">
+      <h1 class="login-head" style="font-family: 'Ubuntu', sans-serif">
+        Admin Login
+      </h1>
+      <div class="login-details">
+        <div class="login-group">
+          <label for="">Username </label>
+          <input
+            type="text"
+            name="username"
+            [(ngModel)]="loginAdmin.username"
+            pattern="^([A-Za-z0-9\.-_]+)@([A-Za-z0-9\-]+)\.([A-Za-z]{2,3})((\.[A-Za-z]{2,3})?)"
+          />
+        </div>
+        <div class="login-group">
+          <label for="">Password</label>
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="loginAdmin.password"
+            #password="ngModel"
+          />
+          <div class="msg">
+            <small
+              style="color: red"
+              *ngIf="password.invalid && password.touched"
+              >Password is required
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="login-btn-class">
+        <button class="login-btn">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

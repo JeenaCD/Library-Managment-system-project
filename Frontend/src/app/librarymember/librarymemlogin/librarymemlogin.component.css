@@ -1,0 +1,97 @@
+.login-main {
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .login-main .login-card {
+    width: 500px;
+    height: 400px;
+    background-color: var(--text-color--);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+  }
+  .login-card .login-head {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--text-color--);
+    padding: 2rem 0;
+    text-shadow: 1px 1px 5px black;
+    background-color: var(--main-color--);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .login-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-group {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 1rem;
+  }
+  .login-group label {
+    font-family: "Ubuntu" sans-serif;
+    color: var(--main-color--);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  .login-group input {
+    border-radius: 3px;
+    border: none;
+    font-size: 1.4rem;
+    box-shadow: 1px 1px 5px black;
+    outline: none;
+    color: black;
+  }
+  .login-btn-class {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .login-btn {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: var(--text-color--);
+    background-color: var(--main-color--);
+    border-radius: 10px;
+    border: 1px solid var(--main-color--);
+    padding: 0.4rem 0.4rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+  }
+  .login-btn:hover {
+    color: var(--main-color--);
+    background-color: var(--text-color--);
+  }
+  @media (max-width: 768px) {
+    .login-main .login-card {
+      width: 350px;
+      height: 350px;
+    }
+    .login-card .login-head {
+      font-size: 1.5rem;
+      padding: 1rem 0;
+    }
+    .login-group {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem 0.5rem;
+    }
+    .login-group label {
+      margin-bottom: 0.3rem;
+      font-size: 1.5rem;
+    }
+    .login-group input {
+      font-size: 1.5rem;
+    }
+  
+    .login-btn {
+      font-size: 1remrem;
+      padding: 0.4rem 0.4rem;
+    }
+  }
+  /* Login form */

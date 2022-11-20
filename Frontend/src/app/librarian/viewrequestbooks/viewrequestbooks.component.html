@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
+  </div>
+</div>
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table" *ngIf="books && books.length">
+      <thead>
+        <tr>
+          <th>Book Image</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th></th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>
+            <img
+              [src]="book.imageUrl"
+              [title]="book.title"
+              [style.width.px]="imageWidth"
+              [style.margin.px]="imageMargin"
+            />
+          </td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.category }}</td>
+          <td>
+            <button
+              class="btn btn-warning"
+              style="cursor: pointer"
+              (click)="check(book)"
+              style="margin-left: 20px"
+            >
+              check
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

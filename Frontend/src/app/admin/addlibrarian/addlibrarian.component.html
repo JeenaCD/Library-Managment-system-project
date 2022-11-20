@@ -1,0 +1,53 @@
+<div class="card">
+  <form (ngSubmit)="AddLibrarian()">
+    <div class="card-header">New Librarian</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td><label>Librarian ID</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="l_id"
+                  [(ngModel)]="librarian.librarianId"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Name</label></td>
+              <td>
+                <input type="text" name="l_name" [(ngModel)]="librarian.name" />
+              </td>
+            </tr>
+            <tr>
+              <td><label>Username</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="l_user"
+                  [(ngModel)]="librarian.username"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><label>password</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="l_password"
+                  [(ngModel)]="librarian.password"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="submit" value="Submit" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>

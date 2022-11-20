@@ -1,0 +1,45 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Welcome {{ librarian.name }}
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav">
+    <mat-divider></mat-divider>
+    <button mat-button class="menu-button" routerLink="librariandashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Dashboard</span>
+    </button>
+
+    <button mat-button class="menu-button" routerLink="viewbooks">
+      <mat-icon>visibility</mat-icon>
+      <span>View Books</span>
+    </button>
+
+    <button mat-button class="menu-button" routerLink="addbook">
+      <mat-icon>add</mat-icon>
+      <span>Add Book</span>
+    </button>
+
+    <button mat-button class="menu-button" routerLink="viewrequests">
+      <mat-icon>view_headline</mat-icon>
+      <span>View Requests</span>
+    </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>LogOut</span>
+    </button>
+  </mat-sidenav>
+  <!-- Main content here! -->
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
